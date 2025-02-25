@@ -92,59 +92,58 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-    public int Minimax(int[,] board, int depth, bool isMaximizing, int alpha, int beta)
+
+    public int Minimax(int[,] board, bool isMax, int alpha, int betha)
     {
         int result = Calculs.EvaluateWin(board);
-        if (result != 2) // 2 significa que aún no ha terminado
+
+        if (result != 2)
             return result;
 
-        if (isMaximizing)
+        if (isMax)
         {
-            int maxEval = int.MinValue;
+            int maxAlpha = int.MinValue;
             for (int i = 0; i < Size; i++)
             {
                 for (int j = 0; j < Size; j++)
                 {
-                    if (board[i, j] == 0)
-                    {
-                        board[i, j] = -1;
-                        int eval = Minimax(board, depth + 1, !isMaximizing, alpha, beta);
-                        board[i, j] = 0;
-                        maxEval = Math.Max(maxEval, eval);
-                        alpha = Math.Max(alpha, eval);
-                        if (beta <= alpha) // Poda alfa-beta
-                            return maxEval;
-                    }
+                    if (board[i, j] != 0)
+                        continue;
+                    board[i, j] = 1;
+                    int value = Minimax(board, !isMax, alpha, betha);
+                    board[i, j] = 0;
+                    alpha = Math.Max(alpha, value);
+                    maxAlpha = Math.Max(maxAlpha, alpha);
+                    if (value >= betha)
+                        return maxAlpha;
                 }
             }
-            return maxEval;
+            return maxAlpha;
         }
         else
         {
-            int minEval = int.MaxValue;
+            int minBetha = int.MaxValue;
             for (int i = 0; i < Size; i++)
             {
                 for (int j = 0; j < Size; j++)
                 {
-                    if (board[i, j] == 0)
-                    {
-                        board[i, j] = 1;
-                        int eval = Minimax(board, depth + 1, !isMaximizing, alpha, beta);
-                        board[i, j] = 0;
-                        minEval = Math.Min(minEval, eval);
-                        beta = Math.Min(beta, eval);
-                        if (beta <= alpha) // Poda alfa-beta
-                            return minEval;
-                    }
+                    if (board[i, j] != 0)
+                        continue;
+                    board[i, j] = -1;
+                    int value = Minimax(board, !isMax, alpha, betha);
+                    board[i, j] = 0;
+                    betha = Math.Min(betha, value);
+                    minBetha = Math.Min(minBetha, betha);
+                    if (value <= alpha)
+                        return minBetha;
                 }
             }
-            return minEval;
+            return minBetha;
         }
     }
     public void PredicteMovement()
     {
-        List<(int, int)> bestMoves = new List<(int, int)> ();
-        int bestScore = int.MinValue;
+        int bestScore = int.MaxValue;
         int bestX = -1, bestY = -1;
 
         for (int i = 0; i < Size; i++)
@@ -155,59 +154,34 @@ public class GameManager : MonoBehaviour
                     continue;
 
                 Matrix[i, j] = -1;
-                int score = Minimax(Matrix, 0, false, int.MinValue, int.MaxValue);
+                int score = Minimax(Matrix, true, int.MinValue, int.MaxValue);
                 Matrix[i, j] = 0;
-
-                if (score > bestScore)
+                if (score < bestScore)
                 {
                     bestScore = score;
                     bestX = i;
                     bestY = j;
                 }
-
-                if (score == bestScore)
-                {
-                    bestMoves.Add((i, j));
-                }
             }
         }
-
-        //if (bestMoves.Count > 0)
-        //{
-        //    var (bestX_, bestY_) = bestMoves[UnityEngine.Random.Range(0, bestMoves.Count)];
-        //    DoMove(bestX_, bestY_, -1);
-        //}
         if (bestX != -1 && bestY != -1)
         {
+            Debug.Log(bestScore);
             DoMove(bestX, bestY, -1);
         }
     }
-    public void MoveAI(int[,] current, int[,] next)
+
+    public void DebugMatrix(int[,] matrix)
     {
-        int x = 0;
-        int y = 0;
-        for (int i = 0; i < Size; i++)
+        string text = "";
+        for (int i = 0; i < 3; i++)
         {
-            for (int j = 0; j < Size; j++)
+            for (int j = 0; j < 3; j++)
             {
-                if (current[i, j] != next[i, j])
-                {
-                    x = i;
-                    y = j;
-                }
+                text += matrix[i, j] + " ";
             }
+            text += "\n";
         }
-        DoMove(x, y, -1);
-        state = States.CanMove;
-    }
-    public void CloneMatrix(int[,] src, int[,] dst)
-    {
-        for (int i = 0; i < Size; i++)
-        {
-            for (int j = 0; j < Size; j++)
-            {
-                dst[i, j] = src[i, j];
-            }
-        }
+        Debug.Log(text);
     }
 }
