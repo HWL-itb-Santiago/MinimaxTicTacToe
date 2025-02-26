@@ -1,8 +1,8 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 public enum States
 {
     CanMove,
@@ -92,7 +92,6 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
-
     public int Minimax(int[,] board, bool isMax, int alpha, int betha)
     {
         int result = Calculs.EvaluateWin(board);
@@ -171,17 +170,22 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void DebugMatrix(int[,] matrix)
+    //public void DebugMatrix(int[,] matrix)
+    //{
+    //    string text = "";
+    //    for (int i = 0; i < 3; i++)
+    //    {
+    //        for (int j = 0; j < 3; j++)
+    //        {
+    //            text += matrix[i, j] + " ";
+    //        }
+    //        text += "\n";
+    //    }
+    //    Debug.Log(text);
+    //}
+
+    public void RestartGame()
     {
-        string text = "";
-        for (int i = 0; i < 3; i++)
-        {
-            for (int j = 0; j < 3; j++)
-            {
-                text += matrix[i, j] + " ";
-            }
-            text += "\n";
-        }
-        Debug.Log(text);
+        SceneManager.LoadScene(0);
     }
 }

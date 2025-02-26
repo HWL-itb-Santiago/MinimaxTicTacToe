@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "E:\\Unity\\MinimaxTicTacToe\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|e:\\unity\\minimaxtictactoe\\assets\\scripts\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|e:\\unity\\minimaxtictactoe\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|e:\\unity\\minimaxtictactoe\\assets\\scripts\\calculs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|E:\\Unity\\MinimaxTicTacToe\\assets\\scripts\\calculs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\calculs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|e:\\unity\\minimaxtictactoe\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{29EC50F5-A31A-BACB-34AE-6879EBE9D401}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|e:\\unity\\minimaxtictactoe\\assets\\scripts\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:assets\\scripts\\node.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -34,12 +34,11 @@
               "RelativeToolTip": "Assets\\Scripts\\Calculs.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAgwBoAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T16:07:17.842Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T16:07:17.842Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "Node.cs",
               "DocumentMoniker": "E:\\Unity\\MinimaxTicTacToe\\Assets\\Scripts\\Node.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Node.cs",
@@ -47,18 +46,17 @@
               "RelativeToolTip": "Assets\\Scripts\\Node.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAqwAQAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-25T16:00:45.727Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-02-25T16:00:45.727Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "GameManager.cs",
               "DocumentMoniker": "E:\\Unity\\MinimaxTicTacToe\\Assets\\Scripts\\GameManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
               "ToolTip": "E:\\Unity\\MinimaxTicTacToe\\Assets\\Scripts\\GameManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKkAAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-25T15:57:04.948Z",
               "EditorCaption": ""
